@@ -4,16 +4,13 @@
 var crm = {
 
 	init :function(){
-		
 		this.insererInfoDsHtml();
 	},
 
 	insererInfoDsHtml:function(){
-
 		$.ajax("/crm.json")
 		.done(this.insertDone)
 		.fail(this.insertFail);
-
 	},
 
 	insertDone : function(data){
@@ -23,7 +20,7 @@ var crm = {
 			var obj = data.customers[i];
 			for(var prop in obj){
 				var individu = prop + " : " + obj[prop];
-	  		//	$("#insert").append('<ul><li>' + individu +'</li></ul>');
+	  			$("#insert").append('<ul><li>' + individu +'</li></ul>');
 	  			}
 	  		}	
 		},
@@ -32,12 +29,7 @@ var crm = {
 		console.log("insertFail");
 
 	},
-	
-
-
-
 };
-
 
 $(document).ready(function(){
 	crm.init();
